@@ -1,148 +1,65 @@
 # BlackBox Penetration Testing Lab
 
-End-to-End Exploitation: From Initial Access to Root Compromise
+End-to-End Attack Chain Demonstration
 
-## 📌 Project Overview
+## Project Overview
 
-This project documents a full black-box penetration testing engagement conducted against a deliberately vulnerable virtual machine in a controlled Capture The Flag (CTF) environment.
+This repository contains a structured black-box penetration testing engagement conducted against a deliberately vulnerable virtual machine in a controlled CTF environment.
 
-The assessment simulates a real-world external attacker scenario with no prior credentials or internal knowledge. The objective was to identify vulnerabilities, exploit them responsibly, escalate privileges, and demonstrate full system compromise while maintaining structured methodology and professional reporting standards.
+The assessment simulates an external attacker scenario with no prior system knowledge and demonstrates a complete attack chain from initial reconnaissance to root-level compromise.
 
-The engagement successfully demonstrated a complete attack chain from weak authentication to root-level privilege escalation.
+The full technical analysis, command logs, screenshots, and remediation strategies are documented in the attached report.
 
-## 🎯 Objectives
+## Scope
 
-- Perform external black-box reconnaissance
+- External black-box testing
 
-- Identify exposed services and attack surface
+- Network-based attacks only
 
-- Exploit authentication weaknesses
+- No social engineering or denial-of-service
 
-- Achieve remote code execution
+- Controlled academic lab environment
 
-- Conduct credential harvesting and lateral movement
+- Attack Progression (High-Level)
 
-- Perform privilege escalation
+- Service enumeration and attack surface mapping
 
-- Document findings using professional penetration testing standards
+- Authentication bypass via brute-force testing
 
-## 🛠 Tools & Technologies Used
+- Exploitation of insecure file upload (remote code execution)
 
-- Nmap – Network reconnaissance & service enumeration
-
-- Hydra – Brute-force authentication testing
-
-- Burp Suite – Web request interception & analysis
-
-- Metasploit Framework – Reverse shell handling
-
-- Msfvenom – Payload generation
-
-- John the Ripper – Offline hash cracking
-
-- SSH – Remote access & lateral movement
-
-- Linux CLI – Post-exploitation enumeration
-
-## 🧪 Attack Chain Summary
-
-The penetration test followed a structured methodology:
-
-1️⃣ Reconnaissance
-
-- Identified live hosts
-
-- Enumerated open ports (HTTP, SSH)
-
-- Service fingerprinting
-
-2️⃣ Initial Access (Flag 1)
-
-- Discovered weak authentication controls
-
-- Performed brute-force attack
-
-- Gained administrative access
-
-3️⃣ Remote Code Execution (Flag 2)
-
-- Exploited insecure file upload functionality
-
-- Uploaded malicious PHP reverse shell
-
-- Established interactive shell access
-
-4️⃣ Credential Harvesting (Flag 3)
-
-- Identified exposed authentication files
-
-- Extracted password hashes
-
-- Performed offline cracking
-
-- Gained SSH access as developer user
-
-5️⃣ Credential Leakage via Shell History (Flag 4)
-
-- Enumerated user directories
-
-- Discovered plaintext credentials in .bash_history
-
-- Performed lateral movement to higher privilege account
-
-6️⃣ Privilege Escalation (Flag 5)
-
-- Identified writable script executed by root via cron
-
-- Modified script to create SUID binary
-
-- Achieved root-level access
-
-- Confirmed full system compromise
-
-## 🚨 Key Vulnerabilities Identified
-
-- Weak authentication with no rate limiting
-
-- Insecure file upload leading to remote code execution
-
-- Improper file permissions exposing credential hashes
-
-- Credential leakage via shell history files
+- Credential extraction and lateral movement
 
 - Privilege escalation through misconfigured scheduled task
 
-## 📊 Security Impact
+- Full root compromise achieved
 
-- The vulnerabilities chained together allowed:
+- Detailed technical breakdown is available in the full report.
 
-- Unauthorized administrative access
+## Tools Used
 
-- Remote command execution
+- Nmap
+- Hydra
+- Burp Suite
+- Metasploit Framework
+- Msfvenom
+- John the Ripper
+- SSH
+- Linux Command Line
 
-- Credential compromise
+## Deliverables
 
-- Lateral movement
+- Structured penetration testing report (PDF)
 
-- Root-level system takeover
+- Testing log with exact commands used
 
-This demonstrates how multiple medium-to-high vulnerabilities can combine to create critical business risk.
+- Evidence screenshots
 
+- Risk assessment and remediation recommendations
 
-## 📚 Methodology Reference
+📄 View Full Technical Report:
+Penetration_Testing_Report.pdf
 
-The engagement follows structured penetration testing principles aligned with:
+### Disclaimer
 
-NIST SP 800-115
-
-Black-box external threat modelling
-
-Controlled exploitation methodology
-
-Ethical security assessment practices
-
-## 👤 Author
-
-Najath Najeem
-Cybersecurity Undergraduate
-ISC2 Certified in Cybersecurity (CC) – Certification in progress
+This project was conducted in a controlled academic lab against an intentionally vulnerable system. All activities were authorized and performed for educational purposes only.
